@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Report Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Payroll Report Application</h1>
+            <div class="subheader">Generate department-wise payroll breakdown reports</div>
+        </header>
+
+        <div class="content">
+            <section class="form-section">
+                <h2>Enter Employee Details</h2>
+                <form id="employeeForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employeeId">Employee ID</label>
+                            <input type="text" id="employeeId" placeholder="Enter employee ID" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" required>
+                                <option value="">Select Department</option>
+                                <option value="1">1 - Personnel</option>
+                                <option value="2">2 - Marketing</option>
+                                <option value="3">3 - Manufacturing</option>
+                                <option value="4">4 - Computer Services</option>
+                                <option value="5">5 - Sales</option>
+                                <option value="6">6 - Accounting</option>
+                                <option value="7">7 - Shipping</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hourlySalary">Hourly Salary ($)</label>
+                            <input type="number" id="hourlySalary" min="0" step="0.01" placeholder="Enter hourly rate"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hoursWorked">Hours Worked</label>
+                            <input type="number" id="hoursWorked" min="0" step="0.5" placeholder="Enter hours worked"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="submit" class="btn-primary">Add Employee</button>
+                        <button type="button" id="calculateBtn" class="btn-primary">Generate Report</button>
+                        <button type="reset" class="btn-danger">Clear</button>
+                    </div>
+                </form>
+
+                <div id="error" class="error hidden"></div>
+
+                <div id="employeeList" class="employee-list hidden">
+                    <h3>Added Employees</h3>
+                    <div id="employeeItems"></div>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section hidden">
+                <div class="buttons">
+                    <button id="printBtn" class="print-btn">Print Report</button>
+                </div>
+                <h2>Payroll Report by Department</h2>
+                <table id="resultsTable" class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Department Number</th>
+                            <th>Department Name</th>
+                            <th>Number of Employees</th>
+                            <th>Total Hours</th>
+                            <th>Gross Payroll ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Results will be inserted here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total</td>
+                            <td id="totalEmployees">0</td>
+                            <td id="totalHours">0</td>
+                            <td id="totalPayroll">$0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
