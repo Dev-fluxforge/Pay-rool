@@ -1,0 +1,128 @@
+/* login.css */
+
+/* Reset and Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:aliceblue;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Login Container */
+  .login {
+    background: #ccc;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Heading */
+  .login h1 {
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  abbr{
+    color: green;
+    text-decoration: none;
+  }
+  
+  /* Form Layout */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  /* Input Fields */
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Buttons */
+  button[type="submit"],
+  button[type="reset"] {
+    padding: 0.8rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Links */
+  .login p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .login a {
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .login a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .login {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login {
+      padding: 1.2rem;
+    }
+  
+    .login h1 {
+      font-size: 1.5rem;
+    }
+  
+    input[type="email"],
+    input[type="password"],
+    button[type="submit"],
+    button[type="reset"] {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+    }
+  
+    .login p {
+      font-size: 0.85rem;
+    }
+  }
+  
